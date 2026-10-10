@@ -1,0 +1,439 @@
+{
+  "dataset": {
+    "name": "Optical Recognition of Handwritten Digits (scikit-learn load_digits)",
+    "samples": 1797,
+    "features": 64,
+    "classes": 10,
+    "image_shape": [
+      8,
+      8
+    ],
+    "pixel_range": [
+      0.0,
+      16.0
+    ],
+    "source": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html"
+  },
+  "protocol": {
+    "test_size": 0.25,
+    "random_state": 42,
+    "stratified": true,
+    "train_samples": 1347,
+    "test_samples": 450,
+    "cv": "5-fold stratified; shuffle=True; random_state=42",
+    "selection": "All hyperparameter selection performed on training split only; held-out test evaluated once per final configuration."
+  },
+  "software": {
+    "python": "3.12.14",
+    "scikit_learn": "1.9.1",
+    "numpy": "2.3.5"
+  },
+  "results": [
+    {
+      "name": "StandardScaler + RBF-SVM",
+      "accuracy": 0.9822222222222222,
+      "macro_precision": 0.9826948952989655,
+      "macro_recall": 0.9820087630603304,
+      "macro_f1": 0.9821205306622242,
+      "train_seconds": 0.031155399978160858,
+      "test_inference_seconds": 0.02940400002989918,
+      "confusion_matrix": [
+        [
+          45,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          45,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          44,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          46,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          44,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          40,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          43
+        ]
+      ],
+      "best_params": {
+        "svc__C": 10,
+        "svc__gamma": 0.01
+      },
+      "cv_best_accuracy": 0.9844031391986782
+    },
+    {
+      "name": "StandardScaler + PCA + RBF-SVM",
+      "accuracy": 0.9822222222222222,
+      "macro_precision": 0.9826948952989655,
+      "macro_recall": 0.9820087630603304,
+      "macro_f1": 0.9821205306622242,
+      "train_seconds": 0.04206920001888648,
+      "test_inference_seconds": 0.02934629999799654,
+      "confusion_matrix": [
+        [
+          45,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          45,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          44,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          46,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          44,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          40,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          43
+        ]
+      ],
+      "best_params": {
+        "pca__n_components": 0.99,
+        "svc__C": 10,
+        "svc__gamma": 0.01
+      },
+      "cv_best_accuracy": 0.9836623984579376,
+      "retained_components": 54,
+      "retained_variance": 0.9914056963294583
+    },
+    {
+      "name": "PCA(95%) + default RBF-SVM (C=1)",
+      "accuracy": 0.9822222222222222,
+      "macro_precision": 0.9826948952989655,
+      "macro_recall": 0.9820087630603304,
+      "macro_f1": 0.9821205306622242,
+      "train_seconds": 0.046910100034438074,
+      "test_inference_seconds": 0.030648899963125587,
+      "confusion_matrix": [
+        [
+          45,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          45,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          44,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          46,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          44,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          45,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          40,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          43
+        ]
+      ]
+    }
+  ]
+}
