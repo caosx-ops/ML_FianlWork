@@ -111,7 +111,7 @@
 
 %页面基本设置
 \RequirePackage[AutoFakeBold=true,AutoFakeSlant=true]{xeCJK}[2017/08/08]
-\RequirePackage[zihao=-4,UTF8,heading=true\HGSCP@fontset]{ctex}[2016/12/27]
+\RequirePackage[\HGSCP@fontset]{ctex}[2016/12/27]
 
 
 
@@ -184,10 +184,7 @@
 %设置各个标题样式
 
 %不需要使用part和chapter层级
-\ctexset{section={format={\centering \heiti \bfseries \zihao{-2}}}} %节
 \newcommand{\sectionbreak}{\clearpage} %小节从新的一页开始
-\ctexset{subsection={format={\raggedright \heiti \bfseries \zihao{4}}}} %小节
-\ctexset{subsubsection={format={\raggedright \heiti \bfseries \zihao{-4}}}} %小小节
 \renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
 	{0ex \@plus1ex \@minus.2ex}%
 	{1em}%
@@ -807,3 +804,7 @@
 		}
 	}
 }
+
+
+
+
